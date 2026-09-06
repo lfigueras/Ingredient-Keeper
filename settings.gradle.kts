@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Pastry Kepper"
+rootProject.name = "Baking Recipe Keeper"
 include(":app")
  

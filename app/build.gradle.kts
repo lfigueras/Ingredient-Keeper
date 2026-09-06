@@ -1,15 +1,16 @@
 plugins {
+    alias(libs.plugins.ksp)
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
 }
 
 android {
-    namespace = "com.lovely.pastrykeeper"
+    namespace = "com.lovely.bakingrecipes"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.lovely.pastrykeeper"
+        applicationId = "com.lovely.bakingrecipes"
         minSdk = 26
         targetSdk = 36
         versionCode = 1
@@ -58,4 +59,8 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.compose.material.icons.extended)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+    ksp(libs.androidx.room.compiler)
+    implementation(libs.coil.compose)
 }

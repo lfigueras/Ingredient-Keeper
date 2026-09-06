@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Baking Recipe Keeper — Roadmap</title>
+<style>
+  :root{
+    --caramel:#C8956C;
+    --cream:#F2DFC8;
+    --warm:#FDF6EE;
+    --card:#FFFFFF;
+    --espresso:#3B2A1A;
+    --mocha:#9C7B5E;
+    --rose:#E8A59B;
+    --terracotta:#D45C43;
+  }
+  *{ box-sizing:border-box; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  @page{ size:A4; margin:16mm 14mm; }
+  body{
+    font-family:"Trebuchet MS","Segoe UI",-apple-system,system-ui,sans-serif;
+    color:var(--espresso);
+    background:var(--warm);
+    margin:0; line-height:1.5; font-size:12px;
+  }
+  .wrap{ max-width:720px; margin:0 auto; padding:8px; }
+
+  /* Cover / header */
+  .cover{
+    background:linear-gradient(135deg,var(--cream),#F8ECDD);
+    border:2px dashed var(--caramel);
+    border-radius:24px;
+    padding:26px 28px;
+    text-align:center;
+    margin-bottom:22px;
+  }
+  .logo{ font-size:46px; line-height:1; }
+  h1{
+    font-size:30px; margin:8px 0 4px; color:var(--espresso);
+    letter-spacing:.3px;
+  }
+  .subtitle{ color:var(--mocha); font-size:14px; margin:0; }
+  .pill{
+    display:inline-block; margin-top:12px; padding:6px 14px;
+    background:var(--caramel); color:#fff; border-radius:999px;
+    font-weight:bold; font-size:12px;
+  }
+
+  h2{
+    font-size:18px; color:var(--espresso);
+    margin:24px 0 10px; padding-bottom:6px;
+    border-bottom:3px dotted var(--rose);
+  }
+  h2 .emoji{ margin-right:6px; }
+
+  .card{
+    background:var(--card);
+    border:1px solid var(--cream);
+    border-left:6px solid var(--caramel);
+    border-radius:16px;
+    padding:14px 16px;
+    margin:12px 0;
+    box-shadow:0 2px 0 var(--cream);
+  }
+  .card h3{
+    margin:0 0 8px; font-size:14px; color:var(--caramel);
+    display:flex; align-items:center; gap:8px;
+  }
+  .badge{
+    font-size:10px; font-weight:bold; color:#fff;
+    background:var(--mocha); border-radius:999px; padding:2px 8px;
+  }
+  ul{ margin:6px 0 0; padding-left:18px; }
+  li{ margin:4px 0; }
+  li::marker{ content:"🧁 "; }
+
+  .tiers{ display:flex; gap:10px; flex-wrap:wrap; }
+  .tier{
+    flex:1 1 30%; min-width:150px;
+    background:var(--cream); border-radius:16px; padding:12px 14px;
+    border:1px solid #e7cfae;
+  }
+  .tier.free{ background:#fff; }
+  .tier.premium{ background:linear-gradient(135deg,#F7E7D3,#F2DFC8); border-color:var(--caramel); }
+  .tier h4{ margin:0 0 6px; color:var(--espresso); font-size:14px; }
+  .price{ color:var(--terracotta); font-weight:bold; font-size:13px; }
+
+  .note{
+    background:#FCEFE9; border:1px dashed var(--rose);
+    border-radius:14px; padding:10px 14px; margin:12px 0;
+    color:var(--espresso); font-size:12px;
+  }
+  .steps{ counter-reset:step; list-style:none; padding-left:0; }
+  .steps li{ counter-increment:step; padding:6px 0 6px 34px; position:relative; }
+  .steps li::marker{ content:""; }
+  .steps li::before{
+    content:counter(step); position:absolute; left:0; top:4px;
+    width:22px; height:22px; border-radius:50%;
+    background:var(--caramel); color:#fff; font-weight:bold;
+    text-align:center; line-height:22px; font-size:12px;
+  }
+  .footer{
+    margin-top:26px; text-align:center; color:var(--mocha);
+    font-size:11px; border-top:2px dotted var(--cream); padding-top:12px;
+  }
+  .avoid-break{ break-inside:avoid; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="cover">
+    <div class="logo">🧁🍰🍪</div>
+    <h1>Baking Recipe Keeper</h1>
+    <p class="subtitle">Product Roadmap &amp; Monetization Plan</p>
+    <span class="pill">Sweet plans ahead ✨</span>
+  </div>
+
+  <div class="note avoid-break">
+    <strong>Where we are 🍞</strong> — A solid core: recipes with ingredients &amp; baking procedure,
+    metadata (servings / prep / bake / difficulty), live scaling, share, search &amp; filters, a dashboard
+    with drill-down, reorderable steps, light/dark theming with a caramel brand palette, snackbar feedback,
+    and reliable Room storage with migrations.
+  </div>
+
+  <h2><span class="emoji">🗺️</span>Feature Roadmap (Phased)</h2>
+
+  <div class="card avoid-break">
+    <h3>Phase 1 — Complete the core app <span class="badge">Free · Retention</span></h3>
+    <ul>
+      <li>Favorites ⭐ + Favorites tab/filter</li>
+      <li>Duplicate recipe (great base for variations)</li>
+      <li>Bottom navigation (Home · Favorites · Categories · More)</li>
+      <li>Shopping list — aggregate &amp; de-duplicate ingredients into a checklist</li>
+      <li>Export &amp; print — text, CSV, PDF</li>
+      <li>Media — multiple photos + a short procedure video, full-screen viewer</li>
+      <li>“Start Baking” mode — full-screen, screen-on, per-step timers</li>
+      <li>Backup / restore (JSON), empty-state art, onboarding, tags</li>
+    </ul>
+  </div>
+
+  <div class="card avoid-break">
+    <h3>Phase 2 — Accounts + Cloud <span class="badge">Unlocks subscriptions</span></h3>
+    <ul>
+      <li>User accounts (Google / email)</li>
+      <li>Cloud sync &amp; backup across devices</li>
+      <li>Unit conversion (g↔oz, ml↔cups) &amp; smart scaling</li>
+      <li>Meal / bake planner + reminders</li>
+      <li>Import recipe from a URL, and photo/OCR → recipe</li>
+    </ul>
+  </div>
+
+  <div class="card avoid-break">
+    <h3>Phase 3 — Learning + Community <span class="badge">Expands audience</span></h3>
+    <ul>
+      <li>“Learn to Bake” hub — techniques, glossary, tips, fixes</li>
+      <li>AI assistant — substitutions, troubleshooting, auto-scaling</li>
+      <li>Community — publish, rate, comment, follow, collections</li>
+      <li>Shareable web links + landing page (open in app / “Get the app”)</li>
+    </ul>
+  </div>
+
+  <div class="card avoid-break">
+    <h3>Phase 4 — Scale + Platforms <span class="badge">Growth</span></h3>
+    <ul>
+      <li>Creator marketplace — sell/curate recipe packs (revenue share)</li>
+      <li>iOS + Web (Compose Multiplatform)</li>
+      <li>Localization (languages, metric/imperial)</li>
+      <li>Home-screen widgets, WearOS timers, voice hands-free</li>
+    </ul>
+  </div>
+
+  <h2><span class="emoji">💰</span>Monetization — Freemium + Subscription</h2>
+
+  <div class="tiers avoid-break">
+    <div class="tier free">
+      <h4>Free 🆓</h4>
+      <div class="price">$0</div>
+      <ul>
+        <li>~15–25 recipes</li>
+        <li>Core editing &amp; scaling</li>
+        <li>Search &amp; share</li>
+        <li>Light ads (optional)</li>
+      </ul>
+    </div>
+    <div class="tier premium">
+      <h4>Premium 👑</h4>
+      <div class="price">~$3–5/mo · ~$25–30/yr</div>
+      <ul>
+        <li>Unlimited recipes</li>
+        <li>Cloud sync &amp; backup</li>
+        <li>Media/video, shopping list</li>
+        <li>PDF export, planner, AI</li>
+        <li>Premium themes · no ads</li>
+      </ul>
+    </div>
+    <div class="tier">
+      <h4>Lifetime / Family 🏡</h4>
+      <div class="price">~$40–60 once</div>
+      <ul>
+        <li>One-time unlock option</li>
+        <li>Shared library (household)</li>
+        <li>Great for classes / cafés</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card avoid-break">
+    <h3>Other revenue streams 🫙</h3>
+    <ul>
+      <li>Affiliate links on ingredients &amp; tools (Amazon, baking supplies)</li>
+      <li>In-app purchases — recipe packs, seasonal collections, theme packs</li>
+      <li>Creator marketplace revenue share (Phase 4)</li>
+      <li>B2B — license to baking schools &amp; classes</li>
+    </ul>
+    <div class="note" style="margin-top:10px">
+      <strong>How:</strong> Google Play Billing for subscriptions, a paywall gating premium features,
+      an <em>isPremium</em> check, and analytics to track conversion.
+    </div>
+  </div>
+
+  <h2><span class="emoji">👩‍🍳</span>Useful to Every Baker (&amp; Cook)</h2>
+  <div class="card avoid-break">
+    <ul>
+      <li><strong>Beginners:</strong> guided Start-Baking mode, glossary, technique videos, timers, AI “why did this fail?”</li>
+      <li><strong>Experienced:</strong> scaling, unit conversion, yield math, notes &amp; versioning, export/print</li>
+      <li><strong>Cooks:</strong> broaden to savory recipes — a general recipe keeper with a baking heart</li>
+      <li><strong>Everyone:</strong> cloud sync, shopping list, social sharing</li>
+    </ul>
+  </div>
+
+  <h2><span class="emoji">✅</span>Suggested Order</h2>
+  <div class="card avoid-break">
+    <ol class="steps">
+      <li>Phase 1 core (Favorites, Duplicate, Shopping list, Export/PDF, Start Baking) — makes it sticky</li>
+      <li>Accounts + cloud sync — the #1 reason people pay</li>
+      <li>Play Billing paywall + free-tier limits — turn on revenue</li>
+      <li>AI assistant + community/links — differentiation &amp; growth</li>
+    </ol>
+  </div>
+
+  <div class="footer">
+    Made with 🧁 for bakers everywhere · Baking Recipe Keeper · 2026
+  </div>
+
+</div>
+</body>
+</html>
