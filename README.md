@@ -92,7 +92,7 @@ Found a bug or have an idea? I'd love to hear it!
 ## 🗺️ Roadmap
 
 Favorites, shopping list, cloud sync, "Start Baking" step-by-step mode, and more.
-See the full plan in [docs/roadmap.html](docs/roadmap.html).
+See the full plan in [docs/docs/Baking-Recipe-Keeper-Roadmap.pdf](docs/Baking-Recipe-Keeper-Roadmap.pdf).
 
 ---
 
